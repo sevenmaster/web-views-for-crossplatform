@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.wachter.liam.topic3.MyWebView
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:id="@+id/WebView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:tag="WebView" />
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/Grid"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="6"
+        tools:context=".MainActivity">
+
+        <com.wachter.liam.topic3.Keyboard.IndependentButton.IndependentButton
+            android:id="@+id/ButtonF1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:tag="ButtonF1"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonF2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:tag="ButtonF2"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonF3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:tag="ButtonF3"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonF4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:tag="ButtonF4"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button7"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button8"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button9"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonArrowUp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/black"
+            android:tag="ButtonArrowUp"
+            android:text="A"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button4"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button5"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button6"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonArrowDown"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/black"
+            android:tag="ButtonArrowDown"
+            android:text="A"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button1"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button2"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button3"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonEnter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:tag="ButtonEnter"
+            android:text="E&#xD;&#xA;N&#xD;&#xA;T&#xD;&#xA;E&#xD;&#xA;R&#xD;"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonC"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/black"
+            android:tag="ButtonC"
+            android:text="A"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/Button0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:tag="Button0"
+            android:text="A"
+            app:autoSizeTextType="uniform" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/ButtonFunc"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_rowWeight="1"
+            android:backgroundTint="@android:color/black"
+            android:tag="ButtonFunc"
+            android:text="A"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform" />
+    </GridLayout>
+</LinearLayout>

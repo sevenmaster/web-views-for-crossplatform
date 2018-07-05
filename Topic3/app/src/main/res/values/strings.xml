@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Topic3</string>
+    <string name="url">https://sevenmaster.github.io/presentation_exam/webviewContent/index.html</string>
+    <string name="delete_speech">löschen</string>
+    <string name="delete">alles löschen</string>
+</resources>
