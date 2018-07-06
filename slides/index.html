@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Präsentationsprüfung</title>
+
+		<link rel="stylesheet" href="css/phone.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/vs.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			let link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1 style="font-size: 3em; font-weight: bold">Crossplattform-Anwendungen<br> durch Webviews</h1>
+					<h2 style="font-size: 1.5em">Präsentationsprüfung</h2>
+                    <h2 style="font-size: 1.5em">Liam Wachter TGI 13/2</h2>
+				</section>
+				<section>
+					<h2>Gliederung</h2>
+					<ol>
+						<li><span class="fragment">Möglichkeiten der Crossplattform-Entwicklung</span></li>
+						<li><span class="fragment">Webviews und ihr Einsatz</span></li>
+						<li><span class="fragment">Demonstration der Anwendung</span></li>
+						<li><span class="fragment">Projektstruktur</span></li>
+						<li><span class="fragment">Fazit</span></li>
+					</ol>
+				</section>
+				<section>
+					<h2>Crossplattform</h2>
+					<img src="res/crossplatform_color.png" style="width: 90%">
+				</section>
+				<section>
+					<section>
+						<h2>Möglichkeiten der Crossplattform-Entwicklung</h2>
+					</section>
+					<section>
+						<h3>Webapps</h3>
+						<img src="res/webapp.png" style="float: left">
+						<ul class="fragment" style="float: left; padding-left: 2em">
+							<li>Einmalige Entwicklung</li>
+							<li>Überall Verfügbar</li>
+						</ul>
+						<ul class="fragment">
+							<li>Interaktionsmöglichkeit</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Crossplattform-Frameworks</h3>
+						<p>Beispiele sind:<br> Xamarin, React Native, Ionic, PhoneGap uvm...</p>
+						<table class="stretch">
+							<tr>
+							<td>
+								<ul class="fragment">
+									<li>Viele Sprachen</li>
+									<li>Wenig Entwicklungsaufwand</li>
+								</ul>
+							</td>
+							<td>
+								<ul class="fragment">
+									<li>Starke Abhängigkeit vom Framework</li>
+									<li>Geringe Flexibilität</li>
+								</ul>
+							</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Crossplattform durch Webviews</h2>
+					</section>
+					<section>
+						<h2>Was ist eine Webview?</h2>
+						<img src="res/wireframePic.png" style="border: none" width="60%">
+					</section>
+					<section>
+						<h2>Zentrale Idee</h2>
+						<img src="res/schema_color.png" width="40%">
+					</section>
+					<section>
+						<p style="font-size: 1.5em" class="fragment">👍 Vorteile vom Webapps und Nativen Apps</p>
+						<p style="font-size: 1.5em" class="fragment">🕐 Nur gering gesteigerter Entwicklungsaufwand</p>
+					</section>
+				</section>
+				<section>
+					<h1>Demonstration der Anwendung</h1>
+				</section>
+				<section>
+					<section>
+						<h2>Projektstuktur</h2>
+						<img src="res/wideOrganic.png" width="90%">
+					</section>
+					<section>
+						<h2>JSON für die Tastatur</h2>
+						<pre spellcheck="false"><code class="hljs" data-trim contenteditable>
+{"name":"advanced","content":
+[[{"text":"%", "color": "green"}, {"text":"1", "color": "blue"}, {"text":"4", "color": "blue"}, {"text":"7", "color": "blue"}, {"text":".", "color": "green"}],
+[{"text":"√", "color": "green"}, {"text":"2", "color": "blue"}, {"text":"5", "color": "blue"}, {"text":"8", "color": "blue"}, {"text":"0", "color": "blue"}],
+[{"text":"^", "color": "green"}, {"text":"3", "color": "blue"}, {"text":"6", "color": "blue"}, {"text":"9", "color": "blue"}, {"text":"(", "color": "green"}],
+[{"text":"ln(", "color": "green"}, {"text":"+", "color": "green"}, {"text":"-", "color": "green"}, {"text":"*", "color": "green"}, {"text":")", "color": "green"}],
+[{"text":",", "color": "green"}, {"text":"DEL", "color": "red"}, {"text":"CLR", "color": "red"}, {"text":"/", "color": "blue"}, {"text":"=", "color": "green"}]
+]}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Kommunikation mit der Webapp</h2>
+						<pre spellcheck="false"><code class="hljs" data-trim contenteditable>
+addJavascriptInterface( this, "Application");
+						</code></pre>
+						<pre spellcheck="false"><code class="hljs" data-trim contenteditable>
+@JavascriptInterface public void sendAlert(final String message) {
+	Handler mainHandler = new Handler(Looper.getMainLooper());
+	Runnable myRunnable = new Runnable() {
+		@Override
+		public void run() {
+			try {
+				handleAlert(message);
+			}
+			catch (JSONException e){
+				e.printStackTrace();
+			}
+		}
+	};
+	mainHandler.post(myRunnable);
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Fazit</h2>
+                    <ul>
+                        <p class="fragment">Bewertung der Technologie</p>
+						<li class="fragment">Viele Programmiersprachen vorausgesetzt</li>
+						<li class="fragment">Performance</li>
+						<li class="fragment">Auch als offline Applikation realisierbar</li>
+					</ul>
+                </section>
+				<section>
+					<span style="font-size: 5em" class="attention">Fragen</span>
+				</section>
+				<section>
+					<h2>Bilder</h2>
+					<p>Eigenes Werk; basierend auf https://pixabay.com/photo-2156083 unter CC0</p>
+					<p>Eigenes Werk; basierend auf https://pixabay.com/photo-2156083 unter CC0; Screenshotinhalt OpenStreetMap unter ODbL</p>
+					<p>Eigenes Werk; erstellt mit Edraw Max</p>
+					<p>Eigenes Werk; basierend auf https://pixabay.com/photo-2156083 unter CC0 und Google Material Icons unter Apache 2.0 Lizenz</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                center: true,
+				width: '80%',
+				height: '80%',
+                slideNumber: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+		</script>
+	</body>
+</html>
